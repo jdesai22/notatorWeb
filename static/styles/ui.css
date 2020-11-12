@@ -1,0 +1,172 @@
+body {
+    background-color: white;
+    font-family: sans-serif;
+    font: "Trebuchet MS"
+}
+
+.title {
+    float:left;
+    display: block;
+    text-align: center;
+/*    padding: 1% 1%;*/
+    font-size: 50px;
+    margin: 1% 1%;
+}
+
+.head {
+    position: fixed;
+    top : 0;
+    border-bottom: #f2f2f2 solid;
+    width: 100%;
+
+
+}
+
+
+.footer {
+    position:fixed;
+    bottom: 0;
+    width:100%;
+    margin: .5% .5%;
+}
+
+.foot {
+
+}
+
+
+.btn {
+    border:none;
+    background-color: #e6e6e6;
+/*    width: 35%;*/
+    font-size: 30px;
+    padding: 3% 10%;
+    transition:.3s;
+
+}
+
+.btn:hover {
+    background-color: #d9d9d9;
+    cursor: pointer;
+
+}
+
+/*.txt {*/
+/*    opacity: 1;*/
+/*    display: block;*/
+/*    animation: fade 2s linear;*/
+
+
+/*!*    for when over text area : cursor: copy;*!*/
+/*}*/
+
+/*.txt:hover{*/
+
+/*}*/
+
+/*.url {*/
+/*    opacity: 0;*/
+/*    display: none;*/
+/*}*/
+
+
+/*.txt textarea{*/
+/*    padding: 2%;*/
+/*}*/
+
+/*.txt textarea:hover {*/
+/*    cursor: copy;*/
+/*}*/
+
+.article:hover {
+    cursor: copy;
+}
+
+.form {
+    text-align: center;
+    position:absolute;
+    width: 60%;
+    top:18%;
+    left:18%;
+/*    border: grey solid;*/
+    border-top: #0099ff solid;
+    padding: 3%;
+    background-color: #f2f2f2;
+
+}
+
+.form select{
+    -webkit-appearance: menulist-button;
+}
+.form select:hover {
+    cursor: pointer;
+}
+
+.questions {
+    font-size: 60px;
+}
+
+.opt {
+    font-size: 35px;
+}
+
+.formElem {
+    margin: 3%;
+    width: 70%;
+    font-size: 50%;
+    padding: 2%
+}
+
+/* Toggle Stuff */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 15%;
+  height: 100%;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e6e6e6;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 80%;
+  width: 40%;
+  left: 6%;
+  bottom: 10%;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #d9d9d9;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #d9d9d9;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(115%);
+  -ms-transform: translateX(115%);
+  transform: translateX(115%);
+}
+

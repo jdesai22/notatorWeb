@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notator Begin</title>
+    <link rel = "stylesheet" href = "{{ url_for('static',filename='styles/ui.css') }}">
+</head>
+
+<body>
+
+    <div class = "head">
+        <h1 class = "title">Notator</h1>
+    </div>
+
+
+    <div class = "form">
+
+        <div class = "opt">
+            Text
+
+            <span id = "toggle">
+                <label class="switch">
+                  <input type="checkbox" id = "opts">
+                  <span class="slider round"></span>
+                </label>
+            </span>
+
+            Url
+        </div>
+
+        <br>
+
+
+        <div class = "questions">
+
+            <div class = "txt">
+
+                <form action = "/notes" method = "post">
+<!--                    <textarea name = "article" cols="90" rows="15"></textarea>-->
+                    <input name = "article" class = "formElem article" type = "text" placeholder="Article">
+
+                    <br>
+
+                    <input name = "kw" placeholder="Number of Keywords" type = "text" class = "formElem">
+
+
+                    <input type = "submit" name = "Submit" class = "btn">
+                </form>
+
+            </div>
+
+
+
+            <div class = "url" style ="display: none">
+
+                <form action = "/notes" method="post">
+                    <input name = "url" placeholder="https://" type="text" class = "formElem">
+
+                    <br>
+
+                    <select name = "domain" class = "formElem">
+                        <option selected>Web Source</option>
+                        <option value = "nPost">New York Post</option>
+                        <option value = "nTimes">New York Times</option>
+                        <option value = "wPost">Washington Post</option>
+                    </select>
+
+                    <br>
+
+                    <input name = "kw" placeholder="Number of Keywords" type = "text" class = "formElem">
+
+
+                    <input type = "submit" name = "Submit" class = "btn">
+
+                </form>
+
+            </div>
+
+<!--            <form>-->
+<!--                <input type = "submit" name = "Submit" id = "btn">-->
+<!--            </form>-->
+
+        </div>
+    </div>
+
+    <div class = "footer">
+        <footer class = "foot">
+            Request New Features at johndoe@gmail.com
+        </footer>
+    </div>
+<!--    <script src="http://code.jquery.com/jquery-6.14.8.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src = "{{ url_for('static',filename='js/ui.js') }}"></script>
+</body>
+</html>

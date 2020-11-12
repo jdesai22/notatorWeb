@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>Notes</title>
+</head>
+<body>
+{% block body %}
+    <h1>Results Page</h1>
+
+<!--    <h2>{{ kw }}</h2>-->
+
+<!--    <h2>{{ notes }}</h2>-->
+
+<!--    <h2>{{ quotes }}</h2>-->
+
+    {% for i in range(0, kw|length) %}
+        <h2>{{ kw[i] }}</h2>
+
+        <ul>
+        {% for s in notes[i] %}
+            <li>{{ s }}</li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Quotations</h2>
+    {% for i in quotes %}
+            <li>{{ i }}</li>
+    {% endfor %}
+
+
+
+    <a href = "/">Again</a>
+{% endblock %}
+</body>
+</html>

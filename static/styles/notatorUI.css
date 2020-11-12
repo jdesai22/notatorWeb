@@ -1,0 +1,191 @@
+body {
+    color: #FAF9F9;
+    font-family: helvetica, sans-serif;
+    background-color: #25252d;
+}
+
+.heading {
+    text-align: center;
+    background-color: #2e2e3a;
+    width: 100%;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 50px;
+}
+
+.question {
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 15%;
+}
+
+.question label:not(.articleLabel) {
+    padding: 2% 20%;
+    font-size: 30px;
+    border-radius: 15px;
+    border: #FAF9F9 solid;
+    background-color: #2e2e3a;
+    transition:0.3s;
+}
+
+.question label:not(.articleLabel):hover{
+    background-color: #40404e;
+}
+
+input[type = "radio"] {
+    opacity: 0;
+}
+
+.userInput {
+    /*padding: 2px;*/
+}
+
+.next {
+    float: right;
+    width: 50%
+}
+
+.back {
+    float:left;
+    /*width: 50%*/
+}
+
+
+.nextBtn {
+    position:absolute;
+    bottom: 2%;
+    right: 2%;
+    font-size: 20px;
+    padding: 2% 8%;
+    border-radius: 15px;
+    border: #FAF9F9 solid;
+    background-color: #2e2e3a;
+    transition:0.3s;
+}
+
+.nextBtn:hover {
+    background-color: #40404e;
+}
+
+.backBtn {
+    position:absolute;
+    bottom: 2%;
+    left: 2%;
+    font-size: 20px;
+    padding: 2% 8%;
+    border-radius: 15px;
+    border: #FAF9F9 solid;
+    background-color: #2e2e3a;
+    transition:0.3s;
+}
+
+.backBtn:hover {
+    background-color: #40404e;
+}
+
+
+/*
+    PAGE 2Url CSS
+*/
+#page2u {
+    display: none;
+}
+
+.page2uquestion {
+    margin-top: 10%;
+}
+
+
+
+/*
+    PAGE 2Article CSS
+ */
+
+#page2a {
+    display: none;
+}
+
+.articleLabel {
+    padding: 2% 20%;
+    font-size: 30px;
+}
+
+#articleInput {
+
+    height: 75%;
+}
+
+.page2aquestion {
+    margin-top: 5%
+}
+
+.textarea {
+    padding: 2%;
+    background-color: #2e2e3a;
+    color: #FAF9F9;
+}
+
+/*
+    PAGE 3 CSS
+ */
+
+#page3 {
+    display: none;
+}
+
+.linkInput {
+    border-radius: 15px;
+    margin-top: 10%;
+    width: 80%;
+    font-size: 20px;
+}
+
+/*
+    PAGE 4 CSS
+ */
+
+#page4 {
+    display: none;
+}
+
+#idcompkey {
+    margin-top: 10%;
+}
+
+.dontshow {
+    display: none;
+}
+
+.page4question {
+    margin-top: 10%;
+}
+
+/*#keyInput {*/
+/*    width: 40%;*/
+/*}*/
+
+/*
+    NOTES PAGE CSS
+ */
+
+#notesPage {
+    display: none;
+}
+
+.notesMain {
+    z-index: 1;
+    margin-bottom: 120px;
+}
+
+.notesBtn {
+    z-index: -1;
+    width: 50%;
+    border: none;
+}
+
+.lastBtn {
+    position:fixed;
+}
