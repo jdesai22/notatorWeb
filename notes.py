@@ -48,7 +48,10 @@ def createNotes(source, get_url, webType, txt, kw):
     elif source == "c":
         # file = open("article.txt", "r", encoding="utf8")
         # mainArticle = file.readlines()
-        mainArticle = txt
+        mainArticle = []
+        # print(txt)
+        for i in txt.split(" "):
+            mainArticle.append(i)
 
     #print(mainArticle)
 
@@ -65,7 +68,7 @@ def createNotes(source, get_url, webType, txt, kw):
         #REMOVE LINE BREAKS FROM END OF EACH LINE
         i = i.rstrip("\n")
         mainArticle[k]=i
-        k+=1
+        # k+=1
 
         #CREATE ARRAY OF ALL WORDS IN EACH LINE
         words = i.split()
@@ -80,6 +83,8 @@ def createNotes(source, get_url, webType, txt, kw):
         if wordsInRow > highestWordCount:
             highestWordCount = wordsInRow
             rowWithMostWords = k
+
+        k += 1
 
     #DEFINE 2D ARRAY WITH ALL WORDS IN EACH LINE
     rows, cols = (k, highestWordCount)
@@ -208,7 +213,7 @@ def createNotes(source, get_url, webType, txt, kw):
             for m in sentences2d[l]:
                 cleanWord = []
                 for s in list(m):
-                    if 43 < ord(s) < 60 or ord(s) == 63 or 64 < ord(s) < 94 or 96 < ord(s) < 122:
+                    if 43 < ord(s) < 60 or ord(s) == 63 or 64 < ord(s) < 94 or 96 < ord(s) < 123:
                         cleanWord.append(s)
 
                 cleanNotes.append("".join(cleanWord))

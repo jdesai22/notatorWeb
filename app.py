@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, make_response
 import numpy as np
 #import Counter as counter
 from collections import Counter
 import requests
 from bs4 import BeautifulSoup as bs
 from notes import createNotes
+import pdfkit
 
 app = Flask(__name__)
 
@@ -31,6 +32,10 @@ def notes():
         allNotes = createNotes("c", "none", "none", res, kw)
 
         return render_template('notes.html', kw = allNotes[0], notes = allNotes[1], quotes = allNotes[2])
+
+
+
+
 
 
 
