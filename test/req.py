@@ -49,7 +49,7 @@ def createNotes(source, get_url, webType, txt, kw):
         # file = open("article.txt", "r", encoding="utf8")
         # mainArticle = file.readlines()
         mainArticle = []
-        print(txt)
+        # print(txt)
         for i in txt.split(" "):
             mainArticle.append(i)
         # print(mainArticle)
@@ -159,9 +159,19 @@ def createNotes(source, get_url, webType, txt, kw):
         letters = list(i)
         endOfSentence = False
         lenLetters = len(letters)
-        for k in range (0, lenLetters):
+        for k in range(0, lenLetters):
             if letters[k] == '.':
-                endOfSentence = True
+                try:
+                    prev1 = "".join([letters[k-2], letters[k-1]])
+                    prev2 = "".join([letters[k-3], letters[k-2], letters[k-1]])
+                    if prev1 == 'Mr' or prev1 == 'Dr':
+                        endOfSentence = False
+                    elif prev2 == 'Mrs':
+                        endOfSentence = False
+                    else:
+                        endOfSentence = True
+                except:
+                    endOfSentence = True
         letters = "".join(letters)
         newSentences.append(letters)
         if endOfSentence:
@@ -342,6 +352,10 @@ Sanchez could end up playing in the Dominican Winter League, joining Miguel Andu
     
     
     """
-    test = createNotes("c", "nothing", "none", article, "3")
+
+    newTest = """Mr. I am testing this new method of sorting. At the end of this sentence, these is a real period. testing. test
+     this string. Mrs. testing new method. Dr. sorting is different."""
+
+    test = createNotes("c", "nothing", "none", newTest, "2")
 
     print (test)

@@ -3,34 +3,44 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <title>Notes</title>
+    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/ui.css') }">
 </head>
 <body>
 {% block body %}
-    <h1>Notes</h1>
 
-    {% for i in range(0, kw|length) %}
-        <h2>{{ kw[i] }}</h2>
+    <div class = "head">
+        <h1 class = "title">Notator</h1>
+    </div>
 
-        <ul>
-        {% for s in notes[i] %}
-            <li>{{ s }}</li>
+    <div class = "notes">
+        {% for i in range(0, kw|length) %}
+            <h2>{{ kw[i] }}</h2>
+
+            <ul>
+            {% for s in notes[i] %}
+                <li>{{ s }}</li>
+            {% endfor %}
+            </ul>
         {% endfor %}
-        </ul>
-    {% endfor %}
 
-    <h2>Quotations</h2>
-    {% for i in quotes %}
-            <li>{{ i }}</li>
-    {% endfor %}
+        <h2>Quotations</h2>
+        {% for i in quotes %}
+                <li>{{ i }}</li>
+        {% endfor %}
 
 
-    <br>
+        <br>
 
-    <a href = "/">Again</a>
+        <a href = "/">Again</a>
 
-    <br>
+        <br>
 
-    <a href = "/download">Download</a>
+
+
+
+    </div>
+
+
 {% endblock %}
 </body>
 </html>

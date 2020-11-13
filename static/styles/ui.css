@@ -17,10 +17,29 @@ body {
     position: fixed;
     top : 0;
     border-bottom: #f2f2f2 solid;
-    width: 100%;
+    /*width: 100%;*/
 
 
 }
+
+/*.quote {*/
+/*    float: right;*/
+/*    font-size: 20px;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    !*margin: .5% .5%;*!*/
+/*    margin-left: 90%;*/
+/*}*/
+
+/*.quoteTxt{*/
+/*    background-color: #2e2e3a;*/
+/*    float: right;*/
+/*    text-align: right;*/
+/*    font-size: 20px;*/
+/*    bottom: 0;*/
+/*    width: 100%;*/
+/*    margin: .5% .5%;*/
+/*}*/
 
 
 .footer {

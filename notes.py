@@ -159,9 +159,19 @@ def createNotes(source, get_url, webType, txt, kw):
         letters = list(i)
         endOfSentence = False
         lenLetters = len(letters)
-        for k in range (0, lenLetters):
+        for k in range(0, lenLetters):
             if letters[k] == '.':
-                endOfSentence = True
+                try:
+                    prev1 = "".join([letters[k - 2], letters[k - 1]])
+                    prev2 = "".join([letters[k - 3], letters[k - 2], letters[k - 1]])
+                    if prev1 == 'Mr' or prev1 == 'Dr':
+                        endOfSentence = False
+                    elif prev2 == 'Mrs':
+                        endOfSentence = False
+                    else:
+                        endOfSentence = True
+                except:
+                    endOfSentence = True
         letters = "".join(letters)
         newSentences.append(letters)
         if endOfSentence:
