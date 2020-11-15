@@ -3,7 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <title>Notes</title>
-    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/ui.css') }">
+    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/ui.css') }}">
+    <link rel="stylesheet" href = "{{ url_for('static',filename='styles/notes.css') }}">
 </head>
 <body>
 {% block body %}
@@ -29,16 +30,10 @@
         {% endfor %}
 
 
-        <br>
-
-        <a href = "/">Again</a>
-
-        <br>
-
-
-
 
     </div>
+
+    <a href = "/">Again</a>
 
 
 {% endblock %}
