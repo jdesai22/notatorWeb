@@ -1,13 +1,9 @@
 #!/usr/bin/python3
 
-from flask import Flask, render_template, request, redirect, url_for, make_response
-import numpy as np
+from flask import Flask, render_template, request
 #import Counter as counter
-from collections import Counter
-import requests
-from bs4 import BeautifulSoup as bs
-from notes import createNotes
-import pdfkit
+# from utils.notes import createNotes
+from utils.obnotes import createNotes
 
 app = Flask(__name__)
 

@@ -9,32 +9,59 @@
 <body>
 {% block body %}
 
-    <div class = "head">
-        <h1 class = "title">Notator</h1>
+
+    <div class = "page-container">
+        <div class="head">
+            <h1 class="title">Notator</h1>
+        </div>
+
+        <div class = "content-wrap">
+                <div class = "notes">
+
+                    <h1 id = "notesTitle">Notes from </h1>
+
+                    <hr class = 'break'>
+
+                    {% for i in range(0, kw|length) %}
+                        <h2>{{ kw[i] }}</h2>
+
+                        <ul>
+                        {% for s in notes[i] %}
+                            <li>{{ s }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% endfor %}
+
+                    <hr class = 'break'>
+
+                    <h2>Quotations</h2>
+                    <ul>
+                        {% for i in quotes %}
+                            <li>{{ i }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+        </div>
+
+
+    <!--    <a href="/">Again</a>-->
+
+        <div class = "footer">
+            <footer class = "foot">
+                Request New Features at johndoe@gmail.com
+
+                <a href = "/">Again</a>
+            </footer>
+        </div>
     </div>
 
-    <div class = "notes">
-        {% for i in range(0, kw|length) %}
-            <h2>{{ kw[i] }}</h2>
-
-            <ul>
-            {% for s in notes[i] %}
-                <li>{{ s }}</li>
-            {% endfor %}
-            </ul>
-        {% endfor %}
-
-        <h2>Quotations</h2>
-        {% for i in quotes %}
-                <li>{{ i }}</li>
-        {% endfor %}
-
-
-
-    </div>
-
-    <a href = "/">Again</a>
-
+    <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        document.getElementById("notesTitle").innerText = "Notes from " + m + "/" + d + "/" + y;
+    </script>
 
 {% endblock %}
 </body>

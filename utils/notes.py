@@ -125,7 +125,8 @@ def createNotes(source, get_url, webType, txt, kw):
 
     #REMOVE VERY COMMON AND IRRELEVANT WORDS
     #read banned.txt
-    file = open("banned.txt", "r")
+    file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
+    file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
     bannedWords = file.readlines()
     l = 0
     for i in bannedWords:
@@ -264,31 +265,6 @@ def createNotes(source, get_url, webType, txt, kw):
 
         quotes.append("".join(interQuote))
 
-    #PRINT ALL QUOTES
-    # for i in quotes:
-    #     print(i)
-
-
-    # print(keywords)
-    #
-    # print(notes)
-    #
-    # print(quotes)
-
-    # for i in range(0, len(keywords)):
-    #     print(keywords[i] + "\n")
-    #     for s in notes[i]:
-    #         print(s + "\n")
-    #
-    #     print("_______")
-    #
-    # print("____________")
-    #
-    # for i in quotes:
-    #     print(i + "\n")
-
-
-
 
     kw = convert(keywords)
     note = convert2(notes)
@@ -297,14 +273,3 @@ def createNotes(source, get_url, webType, txt, kw):
     # return [keywords, notes, quotes]
 
 
-# if __name__ == "__main__":
-#     createNotes("u", "https://nypost.com/2020/11/08/biden-names-fired-surgeon-general-as-a-head-of-covid-19-taskforce/", "nPost", "nothing", "3")
-#
-
-# if __name__ == "__main__":
-#     test = createNotes("u", "https://nypost.com/2020/11/08/biden-names-fired-surgeon-general-as-a-head-of-covid-19-taskforce/", "nPost", "nothing", "3")
-#
-#     print (test)
-    # new = convert2(test[1])
-    #
-    # print(new)

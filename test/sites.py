@@ -11,8 +11,12 @@ def getArticle(get_url):
     p = results[0].find_all('p', attrs={'class': None})
     mainArticle = []
 
+    # for i in p:
+    #     mainArticle.append(i.get_text())
+
     for i in p:
-        mainArticle.append(i.get_text())
+        mainArticle.append(i)
+
 
     print(mainArticle)
 
