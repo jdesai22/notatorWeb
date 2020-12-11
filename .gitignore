@@ -1,7 +1,12 @@
 # Project exclude paths
 /venv/
+static/js/notatorUI
+static/styles/notatorUI
 static/js/notatorUI.js
 static/styles/notatorUI.css
 templates/notatorUI.html
+test/sites.py
 test
 utils/notes.py
+utils/notes
+.idea
