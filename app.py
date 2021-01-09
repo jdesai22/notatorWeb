@@ -2,8 +2,7 @@
 
 from flask import Flask, render_template, request
 #import Counter as counter
-# from utils.notes import createNotes
-from utils.obnotes import createNotes
+from utils.notes import createNotes
 
 app = Flask(__name__)
 
@@ -30,10 +29,12 @@ def notes():
         return render_template('notes.html', kw = allNotes[0], notes = allNotes[1], quotes = allNotes[2])
 
 
+@app.errorhandler(404)
+def pageNotFound(e):
+    return render_template("404.html"), 404
 
 
 
-
-
-
+if __name__ == "__main__":
+    app.run()
 

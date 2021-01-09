@@ -4,6 +4,7 @@ from collections import Counter
 import requests
 from bs4 import BeautifulSoup as bs
 
+
 def convert(arr):
     res = []
     for i in arr:
@@ -35,11 +36,15 @@ def createNotes(source, get_url, webType, txt, kw):
         webInfo = bs(webpage.text, 'html.parser')
 
         if webType == "nTimes":
-            results = webInfo.find_all('p', attrs={'class': 'css-158dogj'}) #NEW YORK TIMES
+            # results = webInfo.find_all('p', attrs={'class': 'css-158dogj'}) #NEW YORK TIMES css-1g7m0tk
+            results = webInfo.find_all('p', attrs={'class': 'css-axufdj'})
         elif webType == "wPost":
             results = webInfo.find_all('p', attrs={'class': 'font--body'}) #WASHINGTON POST
         elif webType == "nPost":
             results = webInfo.find_all('div', attrs={'class': 'entry-content'}) #NEW YORK POST
+        elif webType == "fox":
+            results = webInfo.find_all('div', attrs={'class': 'article-body'})
+            results = results[0].find_all('p', attrs={'class': None})
 
         mainArticle = []
         for i in results:
@@ -53,7 +58,6 @@ def createNotes(source, get_url, webType, txt, kw):
         for i in txt.split(" "):
             mainArticle.append(i)
 
-    #print(mainArticle)
 
     lineCount = 0
     wordCount = 0
@@ -62,7 +66,6 @@ def createNotes(source, get_url, webType, txt, kw):
     rowWithMostWords = 0
     wordsInRow = 0
     k = 0
-
 
     for i in mainArticle:
         #REMOVE LINE BREAKS FROM END OF EACH LINE
@@ -125,7 +128,7 @@ def createNotes(source, get_url, webType, txt, kw):
 
     #REMOVE VERY COMMON AND IRRELEVANT WORDS
     #read banned.txt
-    file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
+    # file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
     file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
     bannedWords = file.readlines()
     l = 0
