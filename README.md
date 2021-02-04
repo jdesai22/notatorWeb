@@ -7,7 +7,8 @@ A website that is meant to simplify the often-boring process of notetaking. With
 Current sites to take notes on:
 
 ```text
-Fox News
+Chicago Tribune
+Fox News (testing)
 New York Times
 New York Post
 Washington Post
