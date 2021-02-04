@@ -3,9 +3,9 @@
 from flask import Flask, render_template, request
 #import Counter as counter
 from utils.notes import createNotes
-import logging
-from logging import Formatter
-import sys
+# import logging
+# from logging import Formatter
+# import sys
 
 app = Flask(__name__)
 
@@ -36,16 +36,16 @@ def notes():
 def pageNotFound(e):
     return render_template("404.html"), 404
 
-def log_to_stderr(app):
-      handler = logging.StreamHandler(sys.stderr)
-      handler.setFormatter(Formatter(
-        '%(asctime)s %(levelname)s: %(message)s '
-        '[in %(pathname)s:%(lineno)d]'
-      ))
-      handler.setLevel(logging.WARNING)
-      app.logger.addHandler(handler)
+# def log_to_stderr(app):
+#       handler = logging.StreamHandler(sys.stderr)
+#       handler.setFormatter(Formatter(
+#         '%(asctime)s %(levelname)s: %(message)s '
+#         '[in %(pathname)s:%(lineno)d]'
+#       ))
+#       handler.setLevel(logging.WARNING)
+#       app.logger.addHandler(handler)
 
 if __name__ == "__main__":
-    log_to_stderr(app)
+    # log_to_stderr(app)
     app.run()
 
