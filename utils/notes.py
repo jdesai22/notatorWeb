@@ -9,6 +9,8 @@ def convert(arr):
     res = []
     for i in arr:
         res.append(i.encode("ascii", "ignore"))
+        # res.append(str(i, "utf-8"))
+        # res.append(i.encode("utf-8", "ignore"))
     return res
 
 
@@ -20,6 +22,8 @@ def convert2(arr):
         for s in range(0, len(i)):
             inter = arr[count][s]
             res.append(inter.encode("ascii", "ignore"))
+            # res.append(inter.encode("utf-8", "ignore"))
+            # res.append(str(i, "utf-8"))
         asc.append(res)
         count += 1
     return asc
@@ -275,10 +279,10 @@ def createNotes(source, get_url, webType, txt, kw):
         quotes.append("".join(interQuote))
 
 
-    kw = convert(keywords)
-    note = convert2(notes)
-    quote = convert(quotes)
-    return [kw, note, quote]
-    # return [keywords, notes, quotes]
+    # kw = convert(keywords)
+    # note = convert2(notes)
+    # quote = convert(quotes)
+    # return [kw, note, quote]
+    return [keywords, notes, quotes]
 
 
