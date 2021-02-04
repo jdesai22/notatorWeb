@@ -1,5 +1,8 @@
 # Notator Web Application
 
+### Website
+https://notator-app.herokuapp.com
+
 ### Description
 A website that is meant to simplify the often-boring process of notetaking. With an url or article text, you can start your notetaking adventure. 
 
@@ -15,4 +18,4 @@ Washington Post
 ```
 
 ### Project Status
-Currently working on adding more sites and smoothing out some bugs. Once that is done, the project will be hosted on an actual website. Have fun notetaking!
+Currently working on adding more sites and smoothing out some bugs. 
