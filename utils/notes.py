@@ -45,6 +45,11 @@ def createNotes(source, get_url, webType, txt, kw):
         elif webType == "fox":
             results = webInfo.find_all('div', attrs={'class': 'article-body'})
             results = results[0].find_all('p', attrs={'class': None})
+        elif webType == "chicago":
+            interResults = webInfo.find_all('div', class_="crd clln--it")
+            results = []
+            for i in interResults:
+                results.append(i)
 
         mainArticle = []
         for i in results:

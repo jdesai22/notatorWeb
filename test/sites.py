@@ -18,23 +18,16 @@ def getArticle(get_url):
     #
     # print(mainArticle)
 
-def chicage(url):
+def chicago(url):
 #      crd--cnt
     webpage = requests.get(url)
     webInfo = bs(webpage.text, 'html.parser')
-    # print(webInfo)
-    results = webInfo.find_all('div', class_="crd clln--it")
-    # results = results[0].find_all('p', attrs={'class': None})
-    article = bs
-    # print(results)
+    results = webInfo.find_all('div', class_ = "crd clln--it")
+    finalResults = []
     for i in results:
-        article.append(i.find('p', class_=""))
+        finalResults.append(i.text.encode("utf-8"))
 
-    for i in article:
-        print(i.text)
-
-
-    # print(article)
+    print(finalResults)
 
 
 # //*[@id="f9NVCJ1LNOXhhs"]/div[2]
@@ -46,12 +39,15 @@ def nyTime(url):
     # css-axufdj evys1bk0
     print(res)
 
+
+
+
 if __name__== "__main__":
     # url = str(input("url: "))
 
     # url = "https://www.foxnews.com/politics/geraldo-rivera-trump-election-results-white-house"
     # getArticle(url)
 
-    chicage('https://www.chicagotribune.com/coronavirus/ct-nw-second-stimulus-check-updates-20201227-lcuwnmemifapxht4f7jcltmjmi-story.html')
+    chicago('https://www.chicagotribune.com/coronavirus/ct-nw-second-stimulus-check-updates-20201227-lcuwnmemifapxht4f7jcltmjmi-story.html')
 
     # nyTime('https://www.nytimes.com/2020/12/26/us/explosion-nashville-rv.html?action=click&module=Top%20Stories&pgtype=Homepage')
