@@ -134,7 +134,8 @@ def createNotes(source, get_url, webType, txt, kw):
     #REMOVE VERY COMMON AND IRRELEVANT WORDS
     #read banned.txt
     # file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
-    file = open("/Users/jaidesai/PycharmProjects/notatorWeb/static/text/banned.txt", "r")
+    # file = open("/utils/banned.txt", "r")
+    file = open("utils/banned.txt", "r")
     bannedWords = file.readlines()
     l = 0
     for i in bannedWords:
